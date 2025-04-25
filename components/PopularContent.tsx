@@ -64,7 +64,7 @@ const PopularContent = ({ data }: PopularContentProps) => {
         )}
       </div>
       <CardDescription className='text-center px-2 my-2'>
-        hih4gihirighogeh  hih4gihirighogeh  hih4gihirighogehdwd  hih4gihirighogeh egeg
+        try our cuisine and you will like it
       </CardDescription>
 
       <div className='w-full flex items-center px2 mt-4 gap-3'>

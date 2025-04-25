@@ -22,19 +22,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
 
-  const {userId} = auth()
   return (
     <ClerkProvider>
       <html lang="en">
         <body className={cn("bg-background antialiased", urbanist.variable)}>
           <ToastProvider />
         <img 
-          src="/img/hero.svg"
-          className="absolute -z-10 top-0 right-0 w-full md:w-[60%]"
+          src="/img/s.svg"
+          className="absolute -z-10 -top-48 right-0 w-full md:w-[60%]"
           alt=""
         />
 
-          <Header userId={userId} />
           {children}
           <Footer />
         </body>

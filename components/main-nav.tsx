@@ -53,9 +53,9 @@ const MainNav = ({className, scrolled, ...props}: MainNavProps) => {
              key={route.href}
              className={cn(
                 'text-base font-medium transition-colors hover:text-primary',
-                route.active ? `${scrolled ? 'text-hero font-bold': 
-                    'text-black dark:text-white'
-                }`: `${scrolled ? 'text-black': 'text-white'}`
+                route.active ? `${scrolled ? 'text-primary font-bold': 
+                    'text-primary dark:text-white'
+                }`: `${scrolled ? 'text-white': 'text-white'}`
              )}
             >
                {route.label}
