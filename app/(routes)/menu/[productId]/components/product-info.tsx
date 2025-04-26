@@ -74,12 +74,12 @@ const ProductInfo = ({ product, quantity, setQuantity, selectedSize, setSelected
         {[...Array(5)].map((_, i) => (
           <Star
             key={i}
-            className={i < (product.rating || 4) ? "fill-amber-400 text-amber-400" : "text-gray-300"}
+            className={i < ( 4) ? "fill-amber-400 text-amber-400" : "text-gray-300"}
             size={18}
           />
         ))}
         <span className="text-sm text-neutral-500 ml-2">
-          {product.rating || 4}.0 ({product.reviewCount || 24} reviews)
+          { 4}.0 ({24} reviews)
         </span>
       </div>
 
@@ -90,8 +90,7 @@ const ProductInfo = ({ product, quantity, setQuantity, selectedSize, setSelected
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.3 }}
       >
-        {product.description ||
-          "Delicious and freshly prepared with high-quality ingredients. Our chefs take pride in creating this amazing dish that will satisfy your cravings and leave you wanting more."}
+        Delicious and freshly prepared with high-quality ingredients. Our chefs take pride in creating this amazing dish that will satisfy your cravings and leave you wanting more.
       </motion.p>
 
       {/* Tags */}
@@ -221,7 +220,7 @@ const ProductInfo = ({ product, quantity, setQuantity, selectedSize, setSelected
         </div>
         <div className="flex items-center gap-2">
           <div className="w-2 h-2 rounded-full bg-amber-500"></div>
-          {product.prepTime || "30 min"} preparation
+          { "30 min"} preparation
         </div>
       </div>
     </div>

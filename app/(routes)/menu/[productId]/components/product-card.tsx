@@ -39,7 +39,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
             {[...Array(5)].map((_, i) => (
               <Star
                 key={i}
-                className={i < (product.rating || 4) ? "fill-amber-400 text-amber-400" : "text-gray-300"}
+                className={i < (4) ? "fill-amber-400 text-amber-400" : "text-gray-300"}
                 size={14}
               />
             ))}
@@ -47,7 +47,6 @@ const ProductCard = ({ product }: ProductCardProps) => {
 
           <div className="flex items-center justify-between">
             <p className="font-bold text-amber-600">{product.price}</p>
-            {product.prepTime && <span className="text-xs text-neutral-500">{product.prepTime}</span>}
           </div>
         </div>
       </Link>
