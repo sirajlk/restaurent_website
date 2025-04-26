@@ -72,7 +72,7 @@ function MenuItem({ item, index }) {
         className="relative"
         initial={{ opacity: 0, y: 100 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 100 }}
-        transition={{ duration: 0.7, delay: 0.2 }}
+        transition={{ duration: 1, delay: 0.2 }}
       >
         <div>
           <Image
@@ -99,7 +99,7 @@ function MenuItem({ item, index }) {
             ? { opacity: 1, x: 0 }
             : { opacity: 0, x: isEven ? -100 : 100 }
         }
-        transition={{ duration: 0.7, delay: 0.4 }}
+        transition={{ duration:1, delay: 0.4 }}
       >
         <h3 className="text-xl font-medium mb-2">{item.name}</h3>
         <p className="text-gray-400 text-sm mb-2">{item.description}</p>

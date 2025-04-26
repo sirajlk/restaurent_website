@@ -70,7 +70,7 @@ const CartContent = ({userId}: CartContentProps) => {
         </div>
       </div>
 
-      <div className="col-span-4 space-y-8">
+      <div className="col-span-4 space-y-8 ">
           <Box className="flex-col items-start justify-start gap-2 shadow-lg rounded-lg p-3 space-y-2 bg-slate-50">
             <h2 className="text-lg text-neutral-700 font-semibold">Order Summery</h2>
 

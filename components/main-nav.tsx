@@ -28,11 +28,6 @@ const MainNav = ({className, scrolled, ...props}: MainNavProps) => {
             active: pathname ==='/orders'
         },
         {
-            href: '/about',
-            label: 'About',
-            active: pathname ==='/about'
-        },
-        {
             href: '/contact',
             label: 'Contact',
             active: pathname ==='/contact'

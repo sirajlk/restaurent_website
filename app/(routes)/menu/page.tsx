@@ -12,6 +12,7 @@ import KitchenFilters from "./components/KitchenFilters";
 import getProducts from "@/actions/get-products";
 import PageContent from "./components/PageContent";
 import Header from "@/components/Header";
+import { auth } from "@clerk/nextjs/server";
 
 export const revalidate = 0;
 
@@ -37,9 +38,10 @@ const MenuPage = async ({ searchParams }: MenuPageProps) => {
     kitchen: searchParams?.kitchen,
   });
 
+  const {userId} = auth()
   return (
     <>
-      <Header userId={""} />
+      <Header userId={userId} />
       <Container className="px-4 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-12 py-12 gap-2">
           <div className="hidden md:block col-span-2 border-r  border-gray-100 top-24">

@@ -5,12 +5,14 @@ import { ChevronRight, Home } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 import CartContent from "./components/CartContent";
+import Header from "@/components/Header";
 
 const CartPage = () => {
   const { userId } = auth();
   return (
-    <div className="h-[100vh]">
-      <Container className=" py-12 my-4 h-full">
+    <div className="h-[100vh] ">
+      <Header userId={''} />
+      <Container className=" py-12 my-4 h-full bg-white">
         <div className="w-full px-4 z-10 md:px-12 space-y-7 h-full">
           <Box className="text-neutral-700 text-sm items-center mt-12">
             <Link href="/" className="flex items-center gap-2">

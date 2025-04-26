@@ -29,7 +29,7 @@ const PageContent = ({ products }: PageContentProps) => {
 
   return (
     <>
-      <Box className="pt-4 pb-24 flex-col items-start">
+      <Box className="pt-4 pb-11 flex-col items-start">
         <Box className="text-neutral-700 text-sm items-center">
           <Link href={"/"} className="flex items-center gap-2">
             <Home className="w-4 h-4" />
@@ -72,7 +72,7 @@ const PageContent = ({ products }: PageContentProps) => {
         </Box>
       </Box>
 
-      <div className="grid grid-cols-2 lg:grid-cols-3 w-full h-full gap-4 gap-y-24 ">
+      <div className="grid grid-cols-2 lg:grid-cols-3 pl-16 w-full h-full gap-6 gap-y-24 ">
         {products.length > 0 ? (
           <>
             {products.map((product) => (

@@ -1,49 +1,61 @@
-import getProduct from '@/actions/get-product'
-import getProducts from '@/actions/get-products'
-import Box from '@/components/box'
-import Container from '@/components/container'
-import { ChevronRight, Home } from 'lucide-react'
-import Link from 'next/link'
-import React from 'react'
-import Gallery from './components/gallery/Gallery'
-import Info from './components/Info'
-import SuggestedList from './components/SuggestedList'
+import getProduct from "@/actions/get-product"
+import getProducts from "@/actions/get-products"
+import Container from "@/components/container"
+import type { Metadata } from "next"
+import Breadcrumb from "./components/breadcrumb"
+import ProductView from "./components/product-view"
+import RelatedProducts from "./components/related-products"
+import Header from "@/components/Header"
 
-interface ProductPageProps{
+interface ProductPageProps {
   params: {
     productId: string
   }
 }
 
-const ProductPage = async({params}: ProductPageProps) => {
+// Generate metadata for SEO
+export async function generateMetadata({ params }: ProductPageProps): Promise<Metadata> {
   const product = await getProduct(params.productId)
-  const suggestedProducts = await getProducts({category: product?.category})
+
+  return {
+    title: `${product?.name || "Product"} | Quibeez Restaurant`,
+    description: product?.description || "Delicious food from Quibeez Restaurant",
+    openGraph: {
+      images: product?.images?.[0]?.url ? [product.images[0].url] : [],
+    },
+  }
+}
+
+const ProductPage = async ({ params }: ProductPageProps) => {
+  const product = await getProduct(params.productId)
+  const suggestedProducts = await getProducts({ category: product?.category })
+
+  if (!product) {
+    return (
+      <Container>
+        <div className="flex flex-col items-center justify-center min-h-[50vh] py-20">
+          <h2 className="text-2xl font-bold text-neutral-800">Product not found</h2>
+          <p className="text-neutral-600 mt-2">The product you're looking for doesn't exist or has been removed.</p>
+        </div>
+      </Container>
+    )
+  }
 
   return (
-    <div>
-      <Container className='bg-white rounded-lg my-4 px-4'>
-        <Box className='text-neutral-700 text-sm items-center mt-12'>
-          <Link href='/' className='flex items-center gap-2'>
-            <Home className='w-5 h-5' />
-          </Link>
+    <div className=" min-h-screen pb-20">
+      <Container>
+        <Header userId={''} />
+        {/* Breadcrumb Navigation */}
+        <Breadcrumb product={product} />
 
-          <ChevronRight className='w-5 h-5 text-muted-foreground' />
-          <Link href='/menu' className='flex items-center gap-2 text-muted-foreground'>
-            Products
-          </Link>
-        </Box>
+        {/* Product View */}
+        <ProductView product={product} />
 
-        <div className='px-4 py-10 sm:px-6 lg:px-8 space-y-10'>
-          <div className='lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8'>
-            {/* gellery section */}
-              <Gallery images={product.images} />
-            <div className='mt-10 px-4 sm:mt-16 sm:mx-0 lg:mt-0'>
-              {/* info section  */}
-              <Info product={product} />
-            </div>
-          </div>
-          <SuggestedList products={suggestedProducts} />
-        </div>
+        {/* Related Products */}
+        <RelatedProducts
+          products={suggestedProducts.filter((item) => item.id !== params.productId)}
+          category={product.category}
+        />
       </Container>
     </div>
   )
