@@ -1,6 +1,6 @@
 "use client"
 
-import type { Cuisine, Kitchen } from "@/types-d"
+import type { Cuisine } from "@/types-d"
 import ReusableFilter from "./ReusableFilter"
 interface CuisineFiltersProps {
   cuisines: Cuisine[];

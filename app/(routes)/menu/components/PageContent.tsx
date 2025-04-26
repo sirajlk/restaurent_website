@@ -61,8 +61,9 @@ const PageContent = ({ products }: PageContentProps) => {
             {currentParams &&
               Object.entries(currentParams).map(([key, value]) => (
                 <div
+                  key={key} // ✅ added key prop here
                   onClick={() => handleClick(key)}
-                  className="px-4 py-1 flex items-center  gap-1 cursor-pointer hover:shadow-md rounded-md bg-emerald-500/10 text-neutral-600"
+                  className="px-4 py-1 flex items-center gap-1 cursor-pointer hover:shadow-md rounded-md bg-emerald-500/10 text-neutral-600"
                 >
                   {value}
                   <X className="w-4 h-4" />

@@ -3,9 +3,6 @@ import { Urbanist } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ClerkProvider } from "@clerk/nextjs";
-import { auth } from "@clerk/nextjs/server";
-import Header from "@/components/Header";
-import Image from "next/image";
 import Footer from "@/components/Footer";
 import ToastProvider from "@/providers/toast-provider";
 

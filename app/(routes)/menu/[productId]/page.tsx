@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
 
   return {
     title: `${product?.name || "Product"} | Quibeez Restaurant`,
-    description: product?.description || "Delicious food from Quibeez Restaurant",
+    description:  "Delicious food from Quibeez Restaurant",
     openGraph: {
       images: product?.images?.[0]?.url ? [product.images[0].url] : [],
     },
@@ -35,7 +35,7 @@ const ProductPage = async ({ params }: ProductPageProps) => {
       <Container>
         <div className="flex flex-col items-center justify-center min-h-[50vh] py-20">
           <h2 className="text-2xl font-bold text-neutral-800">Product not found</h2>
-          <p className="text-neutral-600 mt-2">The product you're looking for doesn't exist or has been removed.</p>
+          <p className="text-neutral-600 mt-2">The product you&apos;re looking for doesn&apos;t exist or has been removed.</p>
         </div>
       </Container>
     )
