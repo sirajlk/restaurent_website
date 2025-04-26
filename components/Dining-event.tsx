@@ -1,14 +1,10 @@
 "use client"
 
-import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
-import { useRef, useState } from "react"
-import { useInView } from "framer-motion"
+import {  useState } from "react"
 import { diningPackages } from "@/lib/constants"
 import DiningPackage from "./DiningPackage"
-
-
 
 export default function DiningEvents() {
   const [activeTab, setActiveTab] = useState("private")

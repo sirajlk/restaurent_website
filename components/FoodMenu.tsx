@@ -240,13 +240,13 @@ export default function FoodMenuEnhanced({ products }: FoodMenuEnhancedProps) {
                       </h3>
                     </Link>
                     <p className="text-gray-400 text-sm mb-3">
-                      {product.description || "try our cuisine and you will like it"}
+                      {"try our cuisine and you will like it"}
                     </p>
 
                     {/* Rating */}
                     <div className="flex items-center mb-4">
                       {[...Array(5)].map((_, i) => {
-                        const rating = product.rating || 4
+                        const rating = 4
                         return (
                           <motion.div
                             key={i}

@@ -1,17 +1,17 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Arrow from "@/components/ui/arrow"
-import type { Product } from "@/types-d"
-import FoodMenuEnhanced from "./FoodMenu"
+import { useState } from "react";
+import Arrow from "@/components/ui/arrow";
+import type { Product } from "@/types-d";
+import FoodMenuEnhanced from "./FoodMenu";
 
 interface TodaysSpecialProps {
-  initialProducts: Product[]
+  initialProducts: Product[];
 }
 
 export default function TodaysSpecial({ initialProducts }: TodaysSpecialProps) {
   // Use the server-provided products
-  const [products] = useState<Product[]>(initialProducts)
+  const [products] = useState<Product[]>(initialProducts);
 
   return (
     <div className="w-full bg-black py-16 relative">
@@ -26,7 +26,9 @@ export default function TodaysSpecial({ initialProducts }: TodaysSpecialProps) {
 
         {/* Content */}
         <div className="text-center z-10 relative">
-          <h2 className="text-amber-500 font-serif text-3xl md:text-4xl font-medium mb-3">Today's Special</h2>
+          <h2 className="text-amber-500 font-serif text-3xl md:text-4xl font-medium mb-3">
+            Today&apos;s Special
+          </h2>
         </div>
 
         {/* Right Arrow */}
@@ -40,5 +42,5 @@ export default function TodaysSpecial({ initialProducts }: TodaysSpecialProps) {
 
       <FoodMenuEnhanced products={products} />
     </div>
-  )
+  );
 }

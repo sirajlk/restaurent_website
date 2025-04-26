@@ -46,7 +46,7 @@ const PopularContent = ({ data }: PopularContentProps) => {
   }
 
   // Assuming data has a rating property, if not, default to 4
-  const rating = data.rating || 4
+  const rating =  4
 
   return (
     <motion.div

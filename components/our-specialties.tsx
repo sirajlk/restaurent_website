@@ -6,7 +6,6 @@ import { categories, specialtyItems } from "@/lib/constants";
 import { motion } from "framer-motion";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
-import KnifeBackground from "./knife-background";
 
 export default function OurSpecialties() {
   return (
